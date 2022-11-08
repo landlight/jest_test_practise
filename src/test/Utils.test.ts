@@ -2,7 +2,7 @@ import { Utils } from '../app/Utils';
 
 describe('Utils test suite', () => {
     test('first test', () => {
-        const abc = Utils.toUpperCase('abc');
-        console.log('tests works!!')
+        const result = Utils.toUpperCase('abc');
+        expect(result).toBe('ABC');
     })
 });
