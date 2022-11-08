@@ -1,0 +1,28 @@
+{
+  "name": "jest_test_practise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/landlight/jest_test_practise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/landlight/jest_test_practise/issues"
+  },
+  "homepage": "https://github.com/landlight/jest_test_practise#readme",
+  "devDependencies": {
+    "@types/jest": "^29.2.2",
+    "@types/node": "^18.11.9",
+    "jest": "^29.3.0",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  }
+}
