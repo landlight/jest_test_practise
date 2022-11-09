@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for app/Server/Server.ts</title>
+    <title>Code coverage report for app/Authorization/SessionTokenDBAccess.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">app/Server</a> Server.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">app/Authorization</a> SessionTokenDBAccess.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/20</span>
+                <span class='fraction'>0/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>0/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>0/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/19</span>
+                <span class='fraction'>0/16</span>
             </div>
         
             
@@ -92,8 +92,30 @@
 <a name='L27'></a><a href='#L27'>27</a>
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -101,56 +123,67 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import { createServer, ServerResponse, IncomingMessage } from 'http';</span>
-<span class="cstat-no" title="statement not covered" >import { Utils } from '../Utils/Utils';</span>
-<span class="cstat-no" title="statement not covered" >import { LoginHandler } from '../Handlers/LoginHandler';</span>
-<span class="cstat-no" title="statement not covered" >import { DataHandler } from '../Handlers/DataHandler';</span>
-<span class="cstat-no" title="statement not covered" >import { Authorizer } from '../Authorization/Authorizer';</span>
-<span class="cstat-no" title="statement not covered" >import { UsersDBAccess } from '../Data/UsersDBAccess';</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { SessionToken } from '../Models/ServerModels';
+<span class="cstat-no" title="statement not covered" >import * as Nedb from 'nedb';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >export class S</span></span>erver {
+<span class="cstat-no" title="statement not covered" >export class S</span>essionTokenDBAccess {
 &nbsp;
-    private <span class="cstat-no" title="statement not covered" >authorizer: Authorizer = new Authorizer();</span>
-    private <span class="cstat-no" title="statement not covered" >usersDBAccess: UsersDBAccess = new UsersDBAccess();</span>
+    private nedb: Nedb;
 &nbsp;
-    public <span class="fstat-no" title="function not covered" >startServer(</span>) {
-<span class="cstat-no" title="statement not covered" >        createServer(<span class="fstat-no" title="function not covered" >async (r</span>eq, res) =&gt;<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > {</span></span></span>
-            const basePath = <span class="cstat-no" title="statement not covered" >Utils.getRequestBasePath(req);</span>
-<span class="cstat-no" title="statement not covered" >            switch (basePath) {</span>
-                case 'login':
-<span class="cstat-no" title="statement not covered" >                    await new LoginHandler(req, res, this.authorizer).handleRequest();</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
-                case 'users':
-<span class="cstat-no" title="statement not covered" >                    await new DataHandler(req, res, this.authorizer, this.usersDBAccess).handleRequest();</span>
-<span class="cstat-no" title="statement not covered" >                    break;</span>
-                default:
-<span class="cstat-no" title="statement not covered" >                    break;</span>
-            }
-<span class="cstat-no" title="statement not covered" >            res.end();</span>
-        }).listen(8080);
-<span class="cstat-no" title="statement not covered" >        console.log('server started')</span>
+<span class="fstat-no" title="function not covered" >    constructor(n</span>edb = <span class="branch-0 cbranch-no" title="branch not covered" >new Nedb('databases/sessionToken.db'))</span> {
+<span class="cstat-no" title="statement not covered" >        this.nedb = nedb;</span>
+<span class="cstat-no" title="statement not covered" >        this.nedb.loadDatabase();</span>
     }
-}</pre></td></tr></table></pre>
+&nbsp;
+    public async <span class="fstat-no" title="function not covered" >storeSessionToken(</span>token: SessionToken): Promise&lt;void&gt; {
+<span class="cstat-no" title="statement not covered" >        return new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            this.nedb.insert(token, <span class="fstat-no" title="function not covered" >(e</span>rr: Error | null) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                if (err) {</span>
+<span class="cstat-no" title="statement not covered" >                    reject(err)</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    resolve()</span>
+                }
+            })
+        });
+    }
+&nbsp;
+    public async <span class="fstat-no" title="function not covered" >getToken(</span>tokenId: string): Promise&lt;SessionToken | undefined&gt; {
+<span class="cstat-no" title="statement not covered" >        return new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >            this.nedb.find({ tokenId: tokenId }, <span class="fstat-no" title="function not covered" >(e</span>rr: Error, docs: any[]) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >                if (err) {</span>
+<span class="cstat-no" title="statement not covered" >                    reject(err)</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    if (docs.length == 0) {</span>
+<span class="cstat-no" title="statement not covered" >                        resolve(undefined)</span>
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        resolve(docs[0]);</span>
+                    }
+                }
+            })
+        });
+    }
+}
+&nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
