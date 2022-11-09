@@ -1,6 +1,14 @@
 import { Utils } from '../app/Utils';
 
 describe('Utils test suite', () => {
+    beforeEach(() => {
+
+    })
+
+    beforeAll(() => {
+
+    })
+
     test('first test', () => {
         const result = Utils.toUpperCase('abc');
         expect(result).toBe('ABC');
@@ -22,4 +30,27 @@ describe('Utils test suite', () => {
         }
         expect(parsedUrl.query).toEqual(expectedQuery);
     })
+
+    test('Invalid URL', () => {
+        function expectError() {
+            Utils.parseUrl('');
+        }
+        expect(expectError).toThrow("Empty URL");
+    });
+
+    test('Invalid URL with arrow function', () => {
+        expect(() => {
+            Utils.parseUrl('');
+        }).toThrow("Empty URL");
+    });
+
+    test('Invalid URL with try catch', () => {
+        try {
+            Utils.parseUrl('');
+        } catch(error) {
+            expect(error).toBeInstanceOf(Error);
+            expect(error).toHaveProperty('message', 'Empty URL');
+        }
+        
+    });
 });
