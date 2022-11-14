@@ -35,14 +35,13 @@ export class LoginHandler {
     private async handlePost(){
         try {
             const requestBody: Account = await Utils.getRequestBody(this.request);
-            console.log(requestBody, "rb");
             const token = await this.authorizer.generateToken(requestBody);
             if (token) {
                 this.response.statusCode = HTTP_CODES.CREATED;
                 this.response.writeHead(HTTP_CODES.CREATED, { 'Content-Type': 'application/json' });
                 this.response.write(JSON.stringify(token));
             } else {
-                this.response.statusCode = HTTP_CODES.NOT_fOUND;
+                this.response.statusCode = HTTP_CODES.NOT_FOUND;
                 this.response.write('wrong username or password');
             }
         } catch (error) {
