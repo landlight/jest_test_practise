@@ -35,6 +35,7 @@ export class LoginHandler {
     private async handlePost(){
         try {
             const requestBody: Account = await Utils.getRequestBody(this.request);
+            console.log(requestBody, "rb");
             const token = await this.authorizer.generateToken(requestBody);
             if (token) {
                 this.response.statusCode = HTTP_CODES.CREATED;
