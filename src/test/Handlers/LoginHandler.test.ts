@@ -25,6 +25,7 @@ describe('LoginHandler test suite', () => {
             authorizeMock as any,
         )
         Utils.getRequestBody = getRequestBodyMock;
+        requestMock.method = HTTP_METHODS.POST;
     })
 
     afterEach(() => {
@@ -52,7 +53,6 @@ describe('LoginHandler test suite', () => {
     })
 
     test('post request with valid login', async () => {
-        requestMock.method = HTTP_METHODS.POST;
         getRequestBodyMock.mockReturnValueOnce({
             username: 'someUser',
             password: 'password'
@@ -65,7 +65,6 @@ describe('LoginHandler test suite', () => {
     })
 
     test('post request with invalid login', async () => {
-        requestMock.method = HTTP_METHODS.POST;
         getRequestBodyMock.mockReturnValueOnce({
             username: 'someUser',
             password: 'password'
@@ -77,7 +76,6 @@ describe('LoginHandler test suite', () => {
     })
 
     test('post request with unexpected error', async () => {
-        requestMock.method = HTTP_METHODS.POST;
         getRequestBodyMock.mockRejectedValueOnce(new Error('something went wrong'));
         await loginHandler.handleRequest();
         expect(responseMock.statusCode).toBe(HTTP_CODES.INTERNAL_SERVER_ERROR);
